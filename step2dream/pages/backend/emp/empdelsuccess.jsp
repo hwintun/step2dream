@@ -1,0 +1,3 @@
+<%@ taglib prefix="s" uri="/struts-tags"%>
+Record delete successfully......
+<META HTTP-EQUIV="Refresh" CONTENT="1;URL=viewemp.action">

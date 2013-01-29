@@ -1,0 +1,46 @@
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="pdCode">
+		<field-validator type="requiredstring">
+			<message key="pdCode.requiredstring" />
+		</field-validator>
+	</field>
+	<field name="pdCat">
+		<field-validator type="requiredstring">
+			<message key="pdCat.requiredstring" />
+		</field-validator>
+	</field>
+	<field name="pdBrand">
+		<field-validator type="requiredstring">
+			<message key="pdBrand.requiredstring" />
+		</field-validator>
+	</field>
+	<field name="pdPrize">
+		<field-validator type="requiredstring">
+			<message key="pdPrize.requiredstring" />
+			<message key="pdPrize.shouldnotbezero" />
+		</field-validator>
+	</field>
+	<field name="pdQty">
+		<field-validator type="requiredstring">
+			<message key="pdQty.requiredstring" />
+			<message key="pdQty.shouldnotbezero" />
+		</field-validator>
+	</field>
+	<field name="pdColor">
+		<field-validator type="requiredstring">
+			<message key="pdColor.requiredstring" />
+		</field-validator>
+	</field>
+	<field name="Size">
+		<field-validator type="requiredstring">
+			<message key="pdSize.requiredstring" />
+			<message key="pdSize.shouldnotbezero" />
+		</field-validator>
+	</field>
+
+</validators>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE tiles-definitions PUBLIC       
+ "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"     
+    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/pages/MasterPage.jsp">
+		<put-attribute name="header" value="/pages/header.jsp" />
+		<put-attribute name="menu" value="/pages/menu.jsp" />
+		<put-attribute name="footer" value="/pages/footer.jsp" />
+	</definition>
+
+	<definition name="bebaselayout" template="/pages/backend/bedesign/MasterPage.jsp">
+		<put-attribute name="header" value="/pages/header.jsp" />
+		<put-attribute name="menu" value="/pages/backend/bedesign/menu.jsp" />
+		<put-attribute name="footer" value="/pages/footer.jsp" />
+	</definition>
+
+	<definition name="err.tile" extends="baseLayout">
+		<put-attribute name="body" value="/error.jsp" />
+	</definition>
+
+	<definition name="login.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/login.jsp" />
+	</definition>
+
+	<definition name="home.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/home.jsp" />
+	</definition>
+
+	<definition name="home1.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/bedesign/bhome.jsp" />
+	</definition>
+
+	<!-- ############################## Employee ########################################## -->
+	<definition name="emplist.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/emp/emplist.jsp" />
+	</definition>
+
+	<definition name="Emp.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/emp/emp.jsp" />
+	</definition>
+
+	<definition name="empLogin.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/backend/emp/empLogin.jsp" />
+	</definition>
+
+	<definition name="empedit.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/emp/empedit.jsp" />
+	</definition>
+
+	<definition name="empupsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/emp/empupsuccess.jsp" />
+	</definition>
+
+	<definition name="empdelsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/emp/empdelsuccess.jsp" />
+	</definition>
+	<!-- ############################## End ############################################# -->
+
+
+	<!-- ############################## Customer ######################################## -->
+	<definition name="usrreg.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/backend/usr/usrReg.jsp" />
+	</definition>
+	
+	<definition name="usrregsuccess.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/backend/usr/usrRegSuccess.jsp" />
+	</definition>
+	
+	<definition name="usrcreate.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/usr/usrcreate.jsp" />
+	</definition>
+
+	<definition name="usrlist.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/usr/usrlist.jsp" />
+	</definition>
+
+	<definition name="usredit.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/usr/usredit.jsp" />
+	</definition>
+
+	<definition name="usrupsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/usr/usrupsuccess.jsp" />
+	</definition>
+
+	<definition name="usrdelsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/usr/usrdelsuccess.jsp" />
+	</definition>
+
+	<definition name="usrLogin.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/usrLogin.jsp" />
+	</definition>
+	<!-- ############################## End ############################################# -->
+
+
+	<!-- ############################## Delivery Charge ################################# -->
+	<definition name="dcentry.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/dc/dcentry.jsp" />
+	</definition>
+
+	<definition name="dclist.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/dc/dclist.jsp" />
+	</definition>
+
+	<definition name="dcdelsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/dc/dcdelsuccess.jsp" />
+	</definition>
+
+	<definition name="dcupsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/dc/dcupsuccess.jsp" />
+	</definition>
+
+	<definition name="dcedit.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/dc/dcedit.jsp" />
+	</definition>
+	<!-- ############################## End ############################################# -->
+
+
+	<!-- ############################## Product ######################################### -->
+	<definition name="productlist.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/pd/productlist.jsp" />
+	</definition>
+
+	<definition name="product.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/pd/product.jsp" />
+	</definition>
+
+	<definition name="productedit.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/pd/productedit.jsp" />
+	</definition>
+
+	<definition name="pdsuccess.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/pd/pdsuccess.jsp" />
+	</definition>
+
+	<definition name="pusuccess.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/pd/pusuccess.jsp" />
+	</definition>
+
+	<definition name="entryProduct.tile" extends="bebaselayout">
+		<put-attribute name="body" value="/pages/backend/pd/product.jsp" />
+	</definition>
+	
+	<definition name="productSearch.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/ProductSearch.jsp" />
+	</definition>
+	
+	<definition name="productSearchResult.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/ProductSearchResult.jsp" />
+	</definition>
+	<!-- ############################## End ############################################# -->
+
+
+	<!-- ############################## Reports ######################################### -->
+	<definition name="soldgoodlist.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/reports/soldgoodlist.jsp" />
+	</definition>
+
+	<definition name="deliveredgoodlist.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/reports/deliveredreport.jsp" />
+	</definition>
+
+	<definition name="purchase.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/reports/purchase.jsp" />
+	</definition>
+
+	<definition name="purchaseResult.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/reports/purchaseResult.jsp" />
+	</definition>
+	
+	<definition name="deliverystatuslist.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/reports/deliverystatuslist.jsp" />
+	</definition>
+	
+	<definition name="statussuccess.tile" extends="bebaselayout">
+		<put-attribute name="body"
+			value="/pages/backend/reports/statussuccess.jsp" />
+	</definition>
+	<!-- ############################## End ############################################# -->
+
+	<!-- ############################## Shopping Cart ################################### -->
+
+	<definition name="showproductcatalog.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/ShowProductCatalog.jsp" />
+	</definition>
+
+	<definition name="showdetailproduct.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/ShowDetailProduct.jsp" />
+	</definition>
+
+	<definition name="showshoppingcart.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/showshoppingcart.jsp" />
+	</definition>
+
+	<definition name="deliveryaddress.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/deliveryaddress.jsp" />
+	</definition>
+
+	<definition name="info.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/information.jsp" />
+	</definition>
+	
+	<definition name="viewShoppingCart.tile" extends="baseLayout">
+		<put-attribute name="body" value="/pages/showshoppingcart.jsp" />
+	</definition>
+	<!-- ################################################################################ -->
+
+</tiles-definitions>

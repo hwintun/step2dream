@@ -1,0 +1,18 @@
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="tspName">
+		<field-validator type="requiredstring">
+			<message key="tspName.requiredstring" />
+		</field-validator>
+	</field>
+
+	<field name="tspCharge">
+		<field-validator type="requiredstring">
+			<message key="tspCharge.requiredstring" />
+			<message key="tspCharge.lessthanZero" />
+		</field-validator>
+	</field>
+</validators>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
+	<package name="default" namespace="/" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<default-action-ref name="index" />
+
+		<global-results>
+			<result name="error" type="tiles">err.tile</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+
+		<action name="home">
+			<result type="tiles">home.tile</result>
+		</action>
+		
+		<action name="viewLogin">
+			<result type="tiles">login.tile</result>
+		</action>
+
+		<action name="empLoginStart">
+			<result type="tiles">empLogin.tile</result>
+		</action>
+		
+		<action name="loginemp" class="com.step2dream.login.admin.EmpLoginAction">
+			<result name="success" type="tiles">home1.tile</result>
+			<result name="error" type="tiles">usrReg.tile</result>
+		</action>
+		
+		<action name="empLogout" class="com.step2dream.login.admin.EmpLogoutAction">
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="error" type="tiles">usrReg.tile</result>
+		</action>
+
+		<!-- ############################ Customer ####################################################### -->
+		<action name="usrReg">
+			<result type="tiles">usrreg.tile</result>
+		</action>
+
+		<action name="usrRegSave" class="com.step2dream.usr.UsrCreate"
+			method="save">
+			<result name="success" type="tiles">usrregsuccess.tile</result>
+			<result name="input" type="tiles">usrreg.tile</result>
+			<result name="viewShoppingCart" type="redirect">viewShoppingCart</result>
+		</action>
+		
+		<action name="usrcreate" class="com.step2dream.usr.UsrCreate"
+			method="create">
+			<result name="success" type="tiles">usrcreate.tile</result>
+			<result name="input" type="tiles">usrcreate.tile</result>
+		</action>
+
+		<action name="usrsave" class="com.step2dream.usr.UsrCreate"
+			method="save">
+			<result name="success" type="tiles">usrupsuccess.tile</result>
+			<result name="input" type="tiles">usrcreate.tile</result>
+		</action>
+
+		<action name="usrlist" class="com.step2dream.usr.UsrList">
+			<result name="success" type="tiles">usrlist.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="usrdel" class="com.step2dream.usr.UsrDelete">
+			<result name="success" type="tiles">usrdelsuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="usrpreup" class="com.step2dream.usr.UsrPreUpdate">
+			<result name="success" type="tiles">usredit.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="usrpostup" class="com.step2dream.usr.UsrPostUpdate">
+			<result name="success" type="tiles">usrupsuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="login" class="com.step2dream.login.user.UserLoginAction">
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="confirmAddress" type="redirect">confirmAddress</result>
+			<result name="input" type="tiles">login.tile</result>
+		</action>
+
+		<action name="logout" class="com.step2dream.login.user.UserLogoutAction">
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="error" type="tiles">usrReg.tile</result>
+		</action>
+
+		<!-- ####################################### End ################################################# -->
+
+
+		<!-- ################################### Employee ################################################ -->
+
+		<action name="viewemp" class="com.step2dream.emp.EmpList">
+			<result name="success" type="tiles">emplist.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="empCreate" class="com.step2dream.emp.EmpCreate"
+			method="create">
+			<result name="success" type="tiles">Emp.tile</result>
+			<result name="input" type="tiles">emplist.tile</result>
+		</action>
+
+		<action name="empSave" class="com.step2dream.emp.EmpCreate"
+			method="save">
+			<result name="success" type="tiles">empupsuccess.tile</result>
+			<result name="input" type="tiles">Emp.tile</result>
+		</action>
+
+		<action name="preupdateemp" class="com.step2dream.emp.EmpPreUpdate">
+			<result name="success" type="tiles">empedit.tile</result>
+			<result name="input" type="tiles">Emp.tile</result>
+		</action>
+
+		<action name="postupemp" class="com.step2dream.emp.EmpPostUpdate">
+			<result name="success" type="tiles">empupsuccess.tile</result>
+			<result name="input" type="tiles">Emp.tile</result>
+		</action>
+
+		<action name="delemp" class="com.step2dream.emp.EmpDelete">
+			<result name="success" type="tiles">empdelsuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<!-- ####################################### End ################################################# -->
+
+		<!-- ############################ Delivery Charge ################################################ -->
+
+		<action name="dcentrystart" class="com.step2dream.dc.DCEntry"
+			method="create">
+			<result name="success" type="tiles">dcentry.tile</result>
+			<result name="input" type="tiles">dclist.tile</result>
+		</action>
+
+		<action name="dcentry" class="com.step2dream.dc.DCEntry"
+			method="save">
+			<result name="success" type="tiles">dcupsuccess.tile</result>
+			<result name="input" type="tiles">dcentry.tile</result>
+		</action>
+		<action name="dclist" class="com.step2dream.dc.DCList">
+			<result name="success" type="tiles">dclist.tile</result>
+			<result name="login" type="redirect">login.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+		<action name="dcdel" class="com.step2dream.dc.DCDelete">
+			<result name="success" type="tiles">dcdelsuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+		<action name="dcpreupdate" class="com.step2dream.dc.DCPreUpdate">
+			<result name="success" type="tiles">dcedit.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+		<action name="dcpostupdate" class="com.step2dream.dc.DCPostUpdate">
+			<result name="success" type="tiles">dcupsuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+		<!-- ####################################### End ################################################# -->
+
+
+		<!-- ################################### Product ################################################# -->
+
+		<action name="viewProduct" class="com.step2dream.product.ProductList">
+			<result name="success" type="tiles">productlist.tile</result>
+			<result name="error" type="tiles">/error.jsp</result>
+		</action>
+
+		<action name="deleteProduct" class="com.step2dream.product.ProductDelete">
+			<result name="success" type="tiles">pdsuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="entryP" class="com.step2dream.product.ProductEntry"
+			method="create">
+			<result name="success" type="tiles">product.tile</result>
+		</action>
+
+		<action name="entryProduct" class="com.step2dream.product.ProductEntry"
+			method="save">
+			<result name="success" type="redirect">viewProduct</result>
+			<result name="input" type="tiles">entryProduct.tile</result>
+		</action>
+
+		<action name="productpreupdate" class="com.step2dream.product.ProductPreUpdate">
+			<result name="success" type="tiles">productedit.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+
+		<action name="productpostupdate" class="com.step2dream.product.ProductPostUpdate">
+			<result name="success" type="tiles">pusuccess.tile</result>
+			<result name="error" type="tiles">err.tile</result>
+		</action>
+		
+		<action name="productSearchStart" class="com.step2dream.search.ShowAction" method="create">
+			<result name="success" type="tiles">productSearch.tile</result>
+		</action>
+		
+		<action name="productSearch" class="com.step2dream.search.ShowAction" method="show">
+			<result name="success" type="tiles">productSearchResult.tile</result>
+			<result name="input" type="tiles">productSearch.tile</result>
+		</action>
+
+		<!-- ####################################### End ################################################# -->
+
+
+		<!-- ################################### Reports ################################################# -->
+
+		<action name="viewSoldGood" class="com.step2dream.reports.soldgoods.SoldGoodList">
+			<result name="success" type="tiles">soldgoodlist.tile</result>
+		</action>
+
+		<action name="viewDeliveredGood"
+			class="com.step2dream.reports.delivered.DeliveredGoodList">
+			<result name="success" type="tiles">deliveredgoodlist.tile</result>
+		</action>
+
+		<action name="viewPurchase" class="com.step2dream.reports.purchase.Purchase">
+			<result name="success" type="tiles">purchase.tile</result>
+		</action>
+
+		<action name="viewPurchaseByUser" class="com.step2dream.reports.purchase.Purchase"
+			method="view">
+			<result name="success" type="tiles">purchaseResult.tile</result>
+		</action>
+		
+		<action name="viewDeliveryStatus" class="com.step2dream.reports.changedeliverystatus.ListAction">
+			<result name="success" type="tiles">deliverystatuslist.tile</result>
+		</action>
+		
+		<action name="updateDeliveryStatus" class="com.step2dream.reports.changedeliverystatus.UpdateAction">
+			<result name="success" type="tiles">statussuccess.tile</result>
+		</action>
+
+		<!-- ####################################### End ################################################# -->
+
+		<!-- ############################### Shopping Cart ############################################## -->
+
+		<action name="showProductCatalog" class="com.step2dream.shoppingcart.ShowAction">
+			<result name="success" type="tiles">showproductcatalog.tile</result>
+		</action>
+
+		<action name="showDetailProduct"
+			class="com.step2dream.shoppingcart.ShowDetailProuctAction">
+			<result name="success" type="tiles">showdetailproduct.tile</result>
+		</action>
+
+		<action name="addToShoppingCart"
+			class="com.step2dream.shoppingcart.AddToShoppingCartAction">
+			<result name="success" type="redirect">showProductCatalog.action</result>
+		</action>
+
+		<action name="removeItem" class="com.step2dream.shoppingcart.RemoveItemAction">
+			<result name="success" type="tiles">showproductcatalog.tile</result>
+		</action>
+
+		<action name="checkout" class="com.step2dream.shoppingcart.CheckOutAction">
+			<result name="success" type="tiles">info.tile</result>
+			<result name="input" type="tiles">deliveryaddress.tile</result>
+		</action>
+
+		<action name="confirmAddress" class="com.step2dream.shoppingcart.ConfirmAddress">
+			<result name="success" type="tiles">deliveryaddress.tile</result>
+			<result name="login" type="tiles">login.tile</result>
+		</action>
+		
+		<action name="viewShoppingCart">
+			<result type="tiles">viewShoppingCart.tile</result>
+		</action>
+
+		<!-- ############################################################################################ -->
+
+	</package>
+</struts>
