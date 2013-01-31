@@ -38,7 +38,7 @@
 		
 		<action name="loginemp" class="com.step2dream.login.admin.EmpLoginAction">
 			<result name="success" type="tiles">home1.tile</result>
-			<result name="error" type="tiles">usrReg.tile</result>
+			<result name="input" type="tiles">empLogin.tile</result>
 		</action>
 		
 		<action name="empLogout" class="com.step2dream.login.admin.EmpLogoutAction">

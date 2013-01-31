@@ -38,8 +38,10 @@ public class EmpLoginAction extends ActionSupport implements ServletRequestAware
 
 	@Override
 	public String execute() throws Exception {
-		checkLogin();
-		return SUCCESS;
+		if(checkLogin()) {
+			return SUCCESS;
+		} else 
+			return INPUT;
 	}
 
 	private boolean checkLogin() {
@@ -61,8 +63,10 @@ public class EmpLoginAction extends ActionSupport implements ServletRequestAware
 				rs.beforeFirst();
 				rs.next();
 				id = rs.getInt("idEmp");
-			} else
+			} else {
 				id = 0;
+				return false;
+			}
 			
 			Map session = ActionContext.getContext().getSession();
 			session.put("login-status", id);
